@@ -41,11 +41,6 @@ app.get('/:userId', async (req, res) => {
 app.post('/', async (req, res) => {
   const { body } = req;
 
-  if (!body) {
-    res.status(400).send({ message: 'userId must be provided' });
-    return;
-  }
-
   try {
     const data = await service.createTrainerFor(body);
 
@@ -60,27 +55,13 @@ app.post('/', async (req, res) => {
   } catch (err) {
     console.error(err);
 
-    switch (typeof (err)) {
-      case 'ValidationError': {
-        const { validationErrors } = err;
-        res.status(400)
-          .json({ message: 'invalid data', validationErrors })
-          .send();
-      }
-        break;
-      case 'NotImplementedError':
-        res.status(501).send();
-        break;
-      default: {
-        let { message } = err;
+    let { message } = err;
 
-        message = message || 'an error occured';
+    message = message || 'an error occured';
 
-        res.status(500)
-          .json({ message })
-          .send();
-      }
-    }
+    res.status(500)
+      .json({ message })
+      .send();
   }
 });
 
