@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/index.js",
     "lint": "eslint src/",
-    "test": "jest"
+    "test": "jest",
+    "zip": "zip -rX lambda.zip src/ node_modules/"
   },
   "keywords": [],
   "author": "",
