@@ -6,11 +6,6 @@ const service = require('./trainer-service');
 
 const port = process.env.PORT || 3333;
 
-app.use((err, _, res) => {
-  console.error(err); // eslint-disable-line
-  res.status(500).json({ message: err.message || 'an error occured' });
-});
-
 app.get('/:userId', async (req, res) => {
   const { userId } = req.params;
 
