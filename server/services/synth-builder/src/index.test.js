@@ -25,4 +25,18 @@ describe('handler', () => {
 
     expect(res).toEqual({ statusCode: 200, data });
   });
+
+  test('return 500 if throws', () => {
+    const event = {
+      body: JSON.stringify({ hello: 'world' }),
+    };
+
+    const message = 'abc';
+
+    createSynth.mockImplementation(() => { throw new Error(message); });
+
+    const res = handler(event);
+
+    expect(res).toEqual({ statusCode: 500, message });
+  });
 });

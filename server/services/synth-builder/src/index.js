@@ -20,7 +20,7 @@ module.exports.handler = (event) => {
       data,
     };
   } catch (err) {
-    console.error(err);
+    console.error(err); // eslint-disable-line
 
     const { message } = err;
 
