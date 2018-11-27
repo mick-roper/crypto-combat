@@ -1,9 +1,0 @@
-FROM node:10.13.0-slim
-
-WORKDIR /app
-
-COPY package.json .
-COPY src/ src/
-COPY node_modules/ node_modules/
-
-CMD ["npm", "start"]
