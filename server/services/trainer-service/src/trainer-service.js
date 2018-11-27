@@ -7,7 +7,7 @@ module.exports.getTrainerByUserId = async (userId) => {
 };
 
 module.exports.createTrainerFor = async (data) => {
-  if (data) {
+  if (!data) {
     throw new Error(['data is not defined']);
   }
 
