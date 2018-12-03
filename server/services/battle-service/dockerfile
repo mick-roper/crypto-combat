@@ -4,5 +4,6 @@ WORKDIR /app
 
 COPY node_modules/ node_modules/
 COPY src/ src/
+COPY package.json .
 
 CMD ["npm", "start"]
