@@ -4,7 +4,7 @@
   "description": "",
   "main": "sec/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest src/",
     "lint": "eslint src/"
   },
   "keywords": [],
@@ -16,5 +16,18 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^22.1.1",
     "jest": "^23.6.0"
+  },
+  "jest": {
+    "clearMocks": true,
+    "coverageReporters": ["text"],
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    }
   }
 }
