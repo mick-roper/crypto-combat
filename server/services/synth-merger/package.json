@@ -1,0 +1,20 @@
+{
+  "name": "synth-merger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sec/index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.1",
+    "jest": "^23.6.0"
+  }
+}
