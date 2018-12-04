@@ -11,13 +11,17 @@ const first = (args, ...functions) => {
   throw new Error('none of the functions completed successfully');
 };
 
-const validate = (p1, p2) => {
+const validate = (p1, p2, m) => {
   if (!p1) {
     return { statusCode: 400, body: 'no p1 property' };
   }
 
   if (!p2) {
     return { statusCode: 400, body: 'no p2 property' };
+  }
+
+  if (m && Number.isNaN(m)) {
+    return { statusCode: 400, body: 'mutator is not a number' };
   }
 
   return undefined; // explicitly return to please the linter
